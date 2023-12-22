@@ -3,19 +3,21 @@ class Solution {
         String answer = "";
     	
     	// 문자열을 소문자로 만들고 문자열을 문자로 잘라서 배열에 넣음
-    	String[] arr = s.toLowerCase().split("");
+    	String[] chars = s.toLowerCase().split("");
         //자른 문자열이 공백인지 확인하는 변수
         boolean space = true;
         
     	// 잘린 문자열을 순서대로 처리
-    	for(String word : arr){
+    	for(String c : chars){
+            //공백 다음의 문자이면 대문자로 바꿈.
+            //공백 확인 시, space가 true가 되기 때문.
             if(space){
-                answer += word.toUpperCase();
-            }else{
-                answer += word;
+                answer += c.toUpperCase();
+            }else{ //space가 false면 대문자로 바꿀 필요없이 문자 그대로 합침.
+                answer += c;
             }
-            
-            space = word.equals(" ")? true : false;
+            //문자가 " "이면, space가 true
+            space = c.equals(" ")? true : false;
         }
 
     		return answer;
