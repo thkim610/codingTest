@@ -1,0 +1,7 @@
+-- 두번이상쓰인이름, 해당이름이 쓰인 횟수
+-- 이름없는 동물은 집계에서 제외(is not null), 결과는 이름순으로 (order by name)
+-- Having으로 그룹에 쿼리결과에 조건을 추가함
+SELECT name, count(*) from ANIMAL_INS
+where name is not null
+group by name having count(*) >= 2 -- 이름으로 그룹화하고 이름이 2번 이상 쓰인 경우 조회
+order by name;
