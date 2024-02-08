@@ -8,6 +8,7 @@ public class Solution {
 		List<Integer> num = new ArrayList<Integer>();
         
         for(int i=0; i<arr.length; i++){
+            //처음 값은 비교대상이 없으므로 값만 바로 저장.
             if(i==0){
             	num.add(arr[i]);
                 continue;
